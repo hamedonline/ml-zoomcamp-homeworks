@@ -8,10 +8,10 @@ COPY ["Pipfile", "Pipfile.lock", "./"]
 
 RUN pipenv install --system --deploy
 
-COPY ["churn.py", "./"]
+COPY ["churn_docker.py", "./"]
 
-COPY ["models/model1.bin", "models/dv.bin", "models/"]
+COPY ["models/model2.bin", "models/dv.bin", "models/"]
 
 EXPOSE 9696
 
-ENTRYPOINT ["python", "churn.py"]
+ENTRYPOINT ["python", "churn_docker.py"]
